@@ -2,9 +2,9 @@ import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import {newSliderImages, sliderImages} from '../dummyData';
+import {newSliderImages} from '../dummyData';
 import styled from 'styled-components';
-import slideImg from '../assets/images/encato.webp'
+// import slideImg from '../assets/images/encato.webp'
 
 const ImgSlider = () => {
     const settings = {

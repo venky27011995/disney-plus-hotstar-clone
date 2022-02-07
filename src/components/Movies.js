@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {Link} from 'react-router-dom'
 import { trendingMovies } from '../dummyData';
-import marvelVideo from '../assets/videos/1564676115-marvel.mp4'
 
 const Movies = () => {
     const settings = {
@@ -119,8 +118,7 @@ const MovieCard = styled.div`
       background: #11111152;
   }
 `
-const Details = styled.div`
-`
+
 
 const Thumbnail = styled.div`
   img {

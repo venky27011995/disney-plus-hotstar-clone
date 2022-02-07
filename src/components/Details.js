@@ -4,13 +4,12 @@ import styled from 'styled-components';
 import { trendingMovies } from '../dummyData';
 
 const Details = () => {
-    const [movieDetails, setMovieDetails] = useState({});
     const [filteredMovie, setFilteredMovie] = useState({});
     
     const params = useParams().id;
     useEffect(()=>{
         setFilteredMovie(trendingMovies?.find(movie => (movie.id === Number(params))));
-    })
+    },[params])
   return(
       <Container>
           <MovieHeader>
@@ -21,7 +20,7 @@ const Details = () => {
               </MovieText>
               <MoviePoster>
                 <PosterGradient></PosterGradient>
-                  <img src={filteredMovie.poster} />        
+                  <img src={filteredMovie.poster} alt={filteredMovie.title} />        
               </MoviePoster>
           </MovieHeader>
       </Container>
