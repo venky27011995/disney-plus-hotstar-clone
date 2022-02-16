@@ -5,8 +5,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {Link} from 'react-router-dom'
 import { trendingMovies } from '../dummyData';
+import { mobile } from '../responsive';
 
-const Movies = () => {
+const Movies = ({title}) => {
     const settings = {
         dots: false,
         infinite: true,
@@ -43,7 +44,7 @@ const Movies = () => {
       };
   return (
       <Container>
-          <h4>Latest & Trending</h4>
+          <h4>{title}</h4>
           <Carousel {...settings}>
             {
                 trendingMovies.map((movie)=>(
@@ -103,6 +104,7 @@ const MovieCard = styled.div`
   position:relative;
   width: 250px;
   cursor: pointer;
+  // ${mobile({width:"100%"})}
   &:hover {
     transform: scale(1.14);
     // box-shadow: 0 0 4px #fff;

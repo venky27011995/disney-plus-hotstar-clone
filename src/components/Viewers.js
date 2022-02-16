@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { viewerLogos } from '../dummyData';
 import marvelVideo from '../assets/videos/1564676115-marvel.mp4'
+import { mobile } from '../responsive';
 
 const Viewers = () => {
   return (
@@ -25,7 +26,7 @@ const Container = styled.div`
   grid-template-columns: repeat(5,minmax(0,1fr));
   grid-gap: 20px;
   margin-top: 30px;
-
+  ${mobile({gridGap:"10px",padding: "5px",marginTop:"10px",})}
 `
 const Wrap = styled.div`
   background:#1e2940;

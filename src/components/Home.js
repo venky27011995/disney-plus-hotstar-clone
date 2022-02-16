@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import HomeBG from '../../src/assets/images/home-background.png';
+import { mobile } from '../responsive';
+import Footer from './Footer';
 import ImgSlider from './ImgSlider';
 import Movies from './Movies';
 import Viewers from './Viewers';
@@ -10,7 +12,8 @@ const Home = () => {
       <Container>
           <ImgSlider />
           <Viewers />
-          <Movies />
+          <Movies title="Latest & Trending" />
+          <Footer />
       </Container>
   );
 };
@@ -22,6 +25,7 @@ const Container = styled.main`
     padding: 0 calc(3.5vw + 5px);
     position:relative;
     overflow-x:hidden;
+    ${mobile({padding:0})}
 
     &:before {
         background: url(${HomeBG}) center center / cover no-repeat fixed;

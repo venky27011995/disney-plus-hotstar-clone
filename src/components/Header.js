@@ -9,6 +9,7 @@ import SeriesIcon from '../../src/assets/images/series-icon.svg'
 import SearchIcon from '../../src/assets/images/search-icon.svg'
 import OriginIcon from '../../src/assets/images/original-icon.svg'
 import UserIcon from '../../src/assets/images/user-icon.svg'
+import { mobile } from '../responsive';
 
 
 const Header = () => {
@@ -53,18 +54,22 @@ const Nav = styled.nav`
     background: #141b29;
     display: flex;
     align-items:center;
-    // justify-content:space-between;
-    padding: 0 30px
+    padding: 0 30px;
+    ${mobile({justifyContent:"space-between"})}
+
 `
 const Logo = styled.img`
     width: 80px;
-    margin-left:20px
+    margin-left:20px;
+    ${mobile({marginLeft:0})}
+
 `
 const NavMenu = styled.ul`
     display:flex;
     align-items:center;
     list-style-type: none;
-    flex:1
+    flex:1;
+    ${mobile({display:"none"})}
 `
 const NavMenuItem  = styled.li`
     // margin-right: 15px;

@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {newSliderImages} from '../dummyData';
 import styled from 'styled-components';
+import { mobile } from '../responsive';
 // import slideImg from '../assets/images/encato.webp'
 
 const ImgSlider = () => {
@@ -78,6 +79,7 @@ const CustomeSlide = styled.div`
 const SlideText = styled.div`
   flex: 40%;
   padding: 30px 50px 30px 70px;
+  ${mobile({display:"none"})}
 `
 const Title = styled.h2`
   color: #fff;
@@ -96,7 +98,8 @@ background: linear-gradient(
   img {
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
-    width:100%
+    width:100%;
+    ${mobile({borderRadius:"8px"})}
   }
 `;
 const SlideGradient = styled.div`

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom'
 import styled from 'styled-components';
 import { trendingMovies } from '../dummyData';
+import { mobile } from '../responsive';
+import Movies from './Movies';
 
 const Details = () => {
     const [filteredMovie, setFilteredMovie] = useState({});
@@ -14,15 +16,18 @@ const Details = () => {
       <Container>
           <MovieHeader>
               <MovieText>
-              <Title>{filteredMovie.title}</Title>
-              <Subtitle>{filteredMovie.subtitle}</Subtitle>
-              <Desc>{filteredMovie.desc}</Desc>
+                <Title>{filteredMovie.title}</Title>
+                <Subtitle>{filteredMovie.subtitle}</Subtitle>
+                <Desc>{filteredMovie.desc}</Desc>
               </MovieText>
               <MoviePoster>
                 <PosterGradient></PosterGradient>
                   <img src={filteredMovie.poster} alt={filteredMovie.title} />        
               </MoviePoster>
           </MovieHeader>
+          <Suggestions>
+            <Movies title="More Like This" />
+          </Suggestions>
       </Container>
   );
 };
@@ -31,7 +36,8 @@ export default Details;
 
 const Container = styled.div`
     min-height: calc(100vh - 60px);
-    padding: 0 calc(3.5w + 5px);
+    padding: 0 calc(3.5vw + 5px);
+    ${mobile({padding:0})}
 `
 const MovieHeader = styled.div`
     display:flex;
@@ -40,24 +46,29 @@ const MovieHeader = styled.div`
     border-radius: 8px;
     margin: 20px 20px;
     box-shadow: 0 0 4px #ffffff26;
+    ${mobile({flexDirection:"column-reverse",margin:"auto",})}
 `
 const MovieText = styled.div`
     flex: 40%;
     padding: 30px 50px 30px 70px;
+    ${mobile({flex:"1",padding:"30px"})}
 `
 const Title = styled.h2`
   color: #fff;
   font-size: 40px;
   margin: 30px 0 10px;
+  ${mobile({fontSize:"24px"})}
 `
 const Subtitle = styled.span`
-    font-siize: 14px;
+    font-size: 14px;
     color:#fff;
     margin:0;
 `
 const Desc = styled.p`
   color:#fff;
   font-size: 20px;
+  ${mobile({fontSize:"16px"})}
+
 `
 const MoviePoster = styled.div`
 flex: 60%;
@@ -76,3 +87,4 @@ const PosterGradient = styled.div`
    width: 250px;
    height: 100%;
 `
+const Suggestions = styled.div``
